@@ -105,6 +105,18 @@ function NoticeTable() {
           </tbody>
         </NoticeTabled>
       </NoticeTableBox>
+
+      <PaginationBox>
+          <Pagination
+            className="pagination"
+            activePage={page}
+            itemsCountPerPage={pageSize}
+            totalitemsCount={totalPages}
+            prevPageText={"<"}
+            nextPageText={">"}
+            onChange={changePage}
+          />
+        </PaginationBox>
     </Container>
   );
 }
@@ -194,6 +206,7 @@ const NoticeTabled = styled.table`
     font-weight: regular;
     font-size: 20px;
     font-family: "Noto Sans KR", serif;
+     vertical-align: middle;
   &:nth-of-type(1) {  /* 첫 번째 <td> */
     width: 80px;
     text-align: center;
@@ -212,6 +225,31 @@ const NoticeTabled = styled.table`
   &:nth-of-type(4) {  /* 네 번째 <td> */
     width: 100px;
     text-align: center;
+  }
+
+`
+  //페이지네이션
+const PaginationBox = styled.div`
+  padding: 10px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center;
+  width: 1280px;
+  height: 50px;
+  background-color: #ffffff;
+  flex-direction: row;
+
+  /* Pagination 스타일 */
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .pagination li {
+    display: inline-block;
+    margin: 0 5px;
   }
 `;
 

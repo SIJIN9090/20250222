@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import AdminUserList from "./user/AdminUserList";
 
-import Review from "../board/review/Review";
-import AdminReservationList from "./reservation/AdminReservationList";
-import OnlineCounsel from "../board/onlinecounsel/OnlineCounsel";
-import Review_B from "./button/Review_B";
-import NoticeList_B from "./button/NoticeList_B";
 import NoticeTable from "../board/notice/NoticeTable";
+import NoticeList_B from "./button/NoticeList_B";
 
+import AdminReservationList from "./reservation/AdminReservationList";
+
+import OnlineCounselTable from "../board/onlinecounsel/OnlineCounselTable";
+
+import Review from "../board/review/Review";
 
 function AdminHome() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -29,11 +30,10 @@ function AdminHome() {
     },
     {
       title: "온라인상담 관리",
-      content: <OnlineCounsel />,
-      button: <Review_B />,
+      content: <OnlineCounselTable />,
     },
     {
-      title: "고객리뷰 관리",
+      title: "고객 리뷰 관리",
       content: <Review />,
     },
   
@@ -85,7 +85,7 @@ function AdminHome() {
 }
 
 const HomeContainer = styled.div`
-  height: 1600px;
+  height: 1400px;
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
@@ -109,7 +109,7 @@ const HomeSection = styled.div`
 const Homeva = styled.div`
   margin-top: 50px;
   background-color: #111111;
-  width: 160px;
+  width: 190px;
    height: 1235px;
   position: absolute;
   grid-row: span 3;
@@ -138,12 +138,12 @@ const Vacontent = styled.div`
   width: 100%; /* 버튼이 가운데 정렬되도록 넓이 조정 */
 
   li {
- 
+margin-bottom:1px;
     font-size: 20px;
     font-weight: 500;
     border: none;
     background-color: #f0f0f0;
-    width: 125px;
+    width: 155px;
     height: 80px;
     text-align: center;
     padding: 10px;
@@ -151,12 +151,16 @@ const Vacontent = styled.div`
         display: flex;
   justify-content: center; /* 세로 중앙 정렬 */
   align-items: center; /* 가로 중앙 정렬 */
-  }
-  button{
 
   }
+  button{
+   font-family: "Noto Sans KR", serif;    
+  width: 95px;
+  }
   li.active {
-    background-color: #003cd2;
+    border:1px solid  #f0f0f0;
+    color: #f0f0f0;
+     background-color: #111111;
   }
 `;
 // -----------------------------------------------------------------
@@ -196,14 +200,13 @@ transform: scale(0.78);
 // ------------------------------------------------------------------------------
 const HomeSectionC = styled.div`
  position: relative;
-top:-430px;
-
- height: 70px;
+top:-230px;
+background: #111111;
+ height: 65px;
    width: 1000px;
  grid-column: 3;
   grid-row: 3;
 
-  background-color: #111111;
 `;
 
 

@@ -213,7 +213,7 @@ const SignInButton = styled.div`
     justify-content: center;
   width: 460px;
     height: 60px;
-      background:#111111 ;
+      background: #111111 ;
 
         font-weight: medium ;
       font-size: 20px;
