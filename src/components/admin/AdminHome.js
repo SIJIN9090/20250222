@@ -8,6 +8,76 @@ import OnlineCounsel from "../board/onlinecounsel/OnlineCounsel";
 import Review_B from "./button/Review_B";
 import NoticeList_B from "./button/NoticeList_B";
 
+
+function AdminHome() {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const data = [
+    {
+      title: "회원 관리",
+      content: <AdminUserList />,
+    },
+    {
+      title: "후기 관리",
+      content: <Review />,
+    },
+    {
+      title: "온라인상담 관리",
+      content: <OnlineCounsel />,
+      button: <Review_B />,
+    },
+    {
+      title: "공지사항 관리",
+      content: <Notice />,
+      button: <NoticeList_B />,
+    },
+    {
+      title: "예약 관리",
+      content: <AdminReservationList />,
+    },
+  ];
+
+  const handleClick = (index) => {
+    setSelectedIndex(index);
+  };
+
+  const getHomeTitle = () => {
+    return data[selectedIndex].title;
+  };
+
+  return (
+    <HomeContainer>
+      <Homeva>
+        <VaTitle>
+          <h3>관리자 메뉴</h3>
+        </VaTitle>
+        <Vacontent>
+          <ul>
+            {data.map((item, index) => (
+              <li
+                key={index}
+                className={selectedIndex === index ? "active" : ""}
+                onClick={() => handleClick(index)}
+              >
+                <button>{item.title}</button>
+              </li>
+            ))}
+          </ul>
+        </Vacontent>
+      </Homeva>
+      <HomeSectionA>
+        <HomeTitle>
+          <h1>{getHomeTitle()}</h1>
+        </HomeTitle>
+      </HomeSectionA>
+      <HomeSectionB>
+        <div>{data[selectedIndex].content}</div>
+      </HomeSectionB>
+      <HomeSectionC>{data[selectedIndex].button}</HomeSectionC>
+    </HomeContainer>
+  );
+}
+
 const HomeContainer = styled.div`
   margin: auto;
   display: block;
@@ -96,73 +166,6 @@ const HomeSectionC = styled.div`
   width: 1080px;
   background-color: #f0f0f0;
 `;
-function AdminHome() {
-  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const data = [
-    {
-      title: "회원 관리",
-      content: <AdminUserList />,
-    },
-    {
-      title: "후기 관리",
-      content: <Review />,
-    },
-    {
-      title: "온라인상담 관리",
-      content: <OnlineCounsel />,
-      button: <Review_B />,
-    },
-    {
-      title: "공지사항 관리",
-      content: <Notice />,
-      button: <NoticeList_B />,
-    },
-    {
-      title: "예약 관리",
-      content: <AdminReservationList />,
-    },
-  ];
-
-  const handleClick = (index) => {
-    setSelectedIndex(index);
-  };
-
-  const getHomeTitle = () => {
-    return data[selectedIndex].title;
-  };
-
-  return (
-    <HomeContainer>
-      <Homeva>
-        <VaTitle>
-          <h3>관리자 메뉴</h3>
-        </VaTitle>
-        <Vacontent>
-          <ul>
-            {data.map((item, index) => (
-              <li
-                key={index}
-                className={selectedIndex === index ? "active" : ""}
-                onClick={() => handleClick(index)}
-              >
-                <button>{item.title}</button>
-              </li>
-            ))}
-          </ul>
-        </Vacontent>
-      </Homeva>
-      <HomeSectionA>
-        <HomeTitle>
-          <h1>{getHomeTitle()}</h1>
-        </HomeTitle>
-      </HomeSectionA>
-      <HomeSectionB>
-        <div>{data[selectedIndex].content}</div>
-      </HomeSectionB>
-      <HomeSectionC>{data[selectedIndex].button}</HomeSectionC>
-    </HomeContainer>
-  );
-}
 
 export default AdminHome;
