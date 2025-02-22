@@ -1,18 +1,33 @@
-import React from 'react';
-import { Map } from "react-kakao-maps-sdk";
+import { Map, MapMarker } from "react-kakao-maps-sdk";
+import React from "react";
 
-
-
-function KakaoMap(props) {
-
-  
+function KakaoMap() {
   return (
     <Map
       center={{ lat: 37.48197988243028, lng: 126.89814204687781 }}
-      style={{ width: '918px', height: '329px' }}
+      style={{ width: "918px", height: "329px" }}
       level={3}
-    />  
+    >
+      {/* 마커 추가 */}
+      <MapMarker position={{ lat: 37.48197988243028, lng: 126.89814204687781 }}>
+        <div style={markerStyle}>
+          <strong>🏥 하이펫동물병원</strong>
+        </div>
+      </MapMarker>
+    </Map>
   );
 }
+
+const markerStyle = {
+  background: "#ffffff",
+  padding: "18px 15px 9px 15px",
+  borderRadius: "8px",
+  boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.2)",
+  color: "#333",
+  fontSize: "14px",
+  fontWeight: "bold",
+  textAlign: "center",
+  whiteSpace: "nowrap",
+};
 
 export default KakaoMap;

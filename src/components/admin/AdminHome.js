@@ -9,7 +9,7 @@ import AdminReservationList from "./reservation/AdminReservationList";
 
 import OnlineCounselTable from "../board/onlinecounsel/OnlineCounselTable";
 
-import Review from "../board/review/Review";
+import ReviewTable from "../board/review/ReviewTable";
 
 function AdminHome() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -26,7 +26,7 @@ function AdminHome() {
     },
     {
       title: "온라인예약 관리",
-      content: <AdminReservationList />,
+      content: <OnlineCounselTable />,
     },
     {
       title: "온라인상담 관리",
@@ -34,7 +34,7 @@ function AdminHome() {
     },
     {
       title: "고객 리뷰 관리",
-      content: <Review />,
+      content: <ReviewTable />,
     },
   
    
