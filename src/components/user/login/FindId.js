@@ -121,6 +121,7 @@ const FindiIdInput = styled.div`
     margin-bottom: 5px;
   }
   input {
+   font-family: "Noto Sans KR", serif;
     outline: none;
     font-weight: 300;
     border: none;

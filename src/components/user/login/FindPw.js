@@ -188,6 +188,7 @@ const FindInput = styled.div`
     align-items: center;
   }
   input {
+   font-family: "Noto Sans KR", serif;
     outline: none;
     font-weight: 300;
     border: none;
@@ -226,6 +227,7 @@ width: 600px;
     align-items: center;
   }
   input {
+   font-family: "Noto Sans KR", serif;
     outline: none;
     font-weight: 300;
     border: none;
@@ -256,6 +258,8 @@ const PasswordSection = styled.div`
     gap: 20px;
   }
   input {
+
+   font-family: "Noto Sans KR", serif;
     outline: none;
     font-weight: 300;
     border: none;

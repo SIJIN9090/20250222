@@ -470,6 +470,7 @@ const MailBox = styled.div`
   }
 
   input {
+   font-family: "Noto Sans KR", serif;
     outline: none;
     font-weight: 300;
     margin-bottom: 2px;
@@ -514,6 +515,7 @@ const PwBox = styled.div`
   }
 
   input {
+   font-family: "Noto Sans KR", serif;
     outline: none;
     font-weight: 300;
     margin-bottom: 2px;
@@ -558,6 +560,7 @@ const NickBox = styled.div`
   }
 
   input {
+   font-family: "Noto Sans KR", serif;
     outline: none;
     font-weight: 300;
     margin-bottom: 2px;
@@ -601,6 +604,7 @@ const OtherBox = styled.div`
   }
 
   input {
+   font-family: "Noto Sans KR", serif;
     outline: none;
     font-weight: 300;
     margin-bottom: 2px;
@@ -675,6 +679,7 @@ const Formtable = styled.table`
   }
 
   input {
+   font-family: "Noto Sans KR", serif;
     outline: none;
     width: 100%;
     max-width: 460px;

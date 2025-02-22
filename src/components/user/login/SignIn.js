@@ -153,6 +153,7 @@ const InputBox = styled.div`
 
     text-align: center;
     input {
+     font-family: "Noto Sans KR", serif;
     border:none;
     padding-left:15px;
 
