@@ -13,7 +13,8 @@ function NoticeList_B() {
   );
 }
 
-const NoticeContainer = styled.div`
+const NoticeContainer = styled.div`. 
+background-color: #111111;
   margin: auto;
   display: block;
   width: 1000px;
